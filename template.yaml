@@ -1,9 +1,11 @@
 Resources:
-  Function:
+  HelloWorldFunction:
     Type: AWS::Serverless::Function
     Properties:
       Timeout: 300
       MemorySize: 128
       Handler: org.example.Handler::handleRequest
-      CodeUri: Function
+      CodeUri: build/distributions/didatic-waddle.zip
       Runtime: java8
+      Policies:
+        - AWSLambdaBasicExecutionRole-c796f7ee-bffa-4f2a-bc63-85817a6247bc
