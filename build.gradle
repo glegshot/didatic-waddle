@@ -10,19 +10,19 @@ repositories {
     mavenCentral()
 }
 
-task buildZip(type: Zip) {
+/*task buildZip(type: Zip) {
     from compileJava
     from processResources
     into('lib') {
         from configurations.runtimeClasspath
     }
-}
+}*/
 
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
-    //implementation platform('com.amazonaws:aws-java-sdk-bom:1.11.934')
     implementation 'com.amazonaws:aws-lambda-java-core:1.2.1'
+    implementation 'com.amazonaws:aws-lambda-java-events:3.1.0'
 
 }
 

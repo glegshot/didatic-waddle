@@ -6,8 +6,8 @@ public class Handler{
 
     public String handleRequest(String input, Context context){
 
-        context.getLogger().log("Input: " + input);
-        return "Hello World - " + input;
+        context.getLogger().log("Input: " + input );
+        return "Hello " + input + " You did it bruh !! you did it :)";
     }
 
 }
