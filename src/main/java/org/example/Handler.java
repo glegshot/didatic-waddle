@@ -1,13 +1,21 @@
 package org.example;
 
 import com.amazonaws.services.lambda.runtime.Context;
+import com.amazonaws.services.lambda.runtime.RequestHandler;
 
-public class Handler{
+import java.util.Map;
 
-    public String handleRequest(String input, Context context){
+public class Handler implements RequestHandler<Map<String, String>, Integer> {
 
-        context.getLogger().log("Input: " + input );
-        return "Hello " + input + " You did it bruh !! you did it :)";
+    @Override
+    public Integer handleRequest(Map<String, String> input, Context context) {
+
+        context.getLogger().log("welcome to lambda");
+        for (Map.Entry e : input.entrySet()) {
+            context.getLogger().log(e.getKey() + ":" + e.getValue());
+        }
+
+        return input.entrySet().size();
+
     }
-
 }
