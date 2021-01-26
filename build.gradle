@@ -11,13 +11,10 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    implementation platform('com.amazonaws:aws-java-sdk-bom:1.11.942')
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
     implementation 'com.amazonaws:aws-lambda-java-core:1.2.1'
     implementation 'com.amazonaws:aws-lambda-java-events:3.1.0'
+    implementation 'com.amazonaws:aws-java-sdk-s3'
 
-}
-
-test {
-    useJUnitPlatform()
 }
